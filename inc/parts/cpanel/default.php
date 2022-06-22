@@ -104,8 +104,8 @@
                     <input type="text" name="google_api" id="google_api" class="form-control" value="<?php echo $general->google_api; ?>">
                 </div>
                 <div class="form-group w-100 pl-2">
-                    <label for="site_key">Site ID</label> <br>
-                    <input type="text" name="site_key" id="site_key" class="form-control" value="<?php echo $general->site_key ?? '#7fad39'; ?>">
+                    <label for="site_key">Site Key</label> <br>
+                    <input type="text" name="site_key" id="site_key" class="form-control" value="<?php echo $general->site_key; ?>">
                 </div>
                 <div class="form-group w-100 pl-2">
                     <label for="">&nbsp;</label> <br>
