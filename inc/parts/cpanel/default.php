@@ -62,8 +62,12 @@
                     <input type="text" name="email" id="email" class="form-control" value="<?php echo $general->email; ?>">
                 </div>
                 <div class="form-group w-100 pl-2">
-                    <label for="atencion">Atencion</label> <br>
+                    <label for="atencion">Horario de Atencion</label> <br>
                     <input type="text" name="atencion" id="atencion" class="form-control" value="<?php echo $general->atencion; ?>">
+                </div>
+                <div class="form-group w-100 pl-2">
+                    <label for="color">Color Principal</label> <br>
+                    <input type="color" name="color" id="color" class="form-control" value="<?php echo $general->color ?? '#7fad39'; ?>">
                 </div>
             </div>
             <div class="d-flex">
@@ -100,8 +104,8 @@
                     <input type="text" name="google_api" id="google_api" class="form-control" value="<?php echo $general->google_api; ?>">
                 </div>
                 <div class="form-group w-100 pl-2">
-                    <label for="site_id">Site ID</label> <br>
-                    <input type="text" name="site_id" id="site_id" class="form-control" value="<?php echo $general->site_id; ?>">
+                    <label for="site_key">Site ID</label> <br>
+                    <input type="text" name="site_key" id="site_key" class="form-control" value="<?php echo $general->site_key ?? '#7fad39'; ?>">
                 </div>
                 <div class="form-group w-100 pl-2">
                     <label for="">&nbsp;</label> <br>

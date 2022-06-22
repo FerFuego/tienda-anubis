@@ -506,6 +506,9 @@ if( !empty($_POST) && isset($_POST['action']) && $_POST['action'] == 'operationC
     $instagram = (isset($_POST['instagram']) ? filter_var($_POST['instagram'], FILTER_SANITIZE_STRING) : null);
     $facebook = (isset($_POST['facebook']) ? filter_var($_POST['facebook'], FILTER_SANITIZE_STRING) : null);
     $twitter = (isset($_POST['twitter']) ? filter_var($_POST['twitter'], FILTER_SANITIZE_STRING) : null);
+    $google_api = (isset($_POST['google_api']) ? filter_var($_POST['google_api'], FILTER_SANITIZE_STRING) : null);
+    $site_key = (isset($_POST['site_key']) ? filter_var($_POST['site_key'], FILTER_SANITIZE_STRING) : null);
+    $color = (isset($_POST['color']) ? filter_var($_POST['color'], FILTER_SANITIZE_STRING) : '#7fad39');
 
     
     try {
@@ -557,6 +560,9 @@ if( !empty($_POST) && isset($_POST['action']) && $_POST['action'] == 'operationC
         $general->facebook = $facebook;
         $general->instagram = $instagram;
         $general->twitter = $twitter;
+        $general->google_api = $google_api;
+        $general->site_key = $site_key;
+        $general->color = $color;
         $general->update();
         $general->closeConnection();
         die('true');

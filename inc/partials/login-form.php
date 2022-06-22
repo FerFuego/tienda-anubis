@@ -11,17 +11,11 @@
             <input type="password" name="pass" class="form-control pass" id="pass" required>
         </div>
 
-        <?php 
-            $config = new Configuracion();
-            if ($config->getSiteKey() !== null) : ?>
-
+        <?php if ( $general->site_key !== null ) : ?>
             <div class="form-group">
-                <div class="g-recaptcha" data-sitekey="<?php echo $config->getSiteKey(); ?>"></div>
+                <div class="g-recaptcha" data-sitekey="<?php echo $general->site_key; ?>"></div>
             </div>
-
-        <?php
-            endif;
-            $config->closeConnection(); ?>
+        <?php endif; ?>
 
         <div class="form-group">
             <input type="submit" class="btn btn-primary" value="Entrar">

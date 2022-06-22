@@ -612,6 +612,9 @@ $(document).ready( function () {
             formData.append('instagram', values.instagram);
             formData.append('facebook', values.facebook);
             formData.append('twitter', values.twitter);
+            formData.append('google_api', values.google_api);
+            formData.append('site_key', values.site_key);
+            formData.append('color', values.color);
     
         jQuery.ajax({
             cache: false,
