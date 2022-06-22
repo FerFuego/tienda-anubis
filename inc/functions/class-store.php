@@ -4,9 +4,6 @@
  */
 Class Store {
 
-    const GOOGLE_API = '6LehItsUAAAAAJgi5I6XbtuH6sRzbFhiYNQwZSed';
-    const SITE_KEY = '6LehItsUAAAAAKkyZXB_Aon0DNX7zqMl8OE7jgAO';
-
     public function __construct() {
 
         date_default_timezone_set('America/Argentina/Buenos_Aires');
@@ -14,7 +11,7 @@ Class Store {
         require('autoload.php');
 
         $this->getItemsSession();
-
+        
     }
 
     public static function normalize_title() {

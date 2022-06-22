@@ -16,6 +16,8 @@ class Configuracion {
     public $facebook;
     public $instagram;
     public $twitter;
+    public $google_api;
+    public $site_key;
     protected $obj;
 
     
@@ -36,11 +38,21 @@ class Configuracion {
         $this->facebook = $row['facebook'];
         $this->instagram = $row['instagram'];
         $this->twitter = $row['twitter'];
+        $this->google_api = $row['google_api'];
+        $this->site_key = $row['site_key'];
 	}
+
+    public function getGoogleAPIKey() {
+        return $this->google_api;
+    }
+
+    public function getSiteKey() {
+        return $this->site_key;
+    }
 
     public function update() {
         $this->obj = new sQuery();
-        $this->obj->executeQuery("UPDATE configuracion SET id = '$this->id', logo = '$this->logo', banner = '$this->banner', telefono = '$this->telefono', email = '$this->email', direccion = '$this->direccion', atencion = '$this->atencion', whatsapp = '$this->whatsapp', facebook = '$this->facebook', instagram = '$this->instagram', twitter = '$this->twitter' WHERE (id = '1')");
+        $this->obj->executeQuery("UPDATE configuracion SET id = '$this->id', logo = '$this->logo', banner = '$this->banner', telefono = '$this->telefono', email = '$this->email', direccion = '$this->direccion', atencion = '$this->atencion', whatsapp = '$this->whatsapp', facebook = '$this->facebook', instagram = '$this->instagram', twitter = '$this->twitter', google_api = '$this->google_api', site_key = '$this->site_key' WHERE (id = '1')");
     }
     
     public function closeConnection(){

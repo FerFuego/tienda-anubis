@@ -58,10 +58,6 @@
             </div>
             <div class="d-flex">
                 <div class="form-group w-100 pl-2">
-                    <label for="telefono">Telefono</label> <br>
-                    <input type="text" name="telefono" id="telefono" class="form-control" value="<?php echo $general->telefono; ?>">
-                </div>
-                <div class="form-group w-100 pl-2">
                     <label for="email">Email</label> <br>
                     <input type="text" name="email" id="email" class="form-control" value="<?php echo $general->email; ?>">
                 </div>
@@ -76,12 +72,12 @@
                     <input type="text" name="direccion" id="direccion" class="form-control" value="<?php echo $general->direccion; ?>">
                 </div>
                 <div class="form-group w-100 pl-2">
-                    <label for="whatsapp">WhatsApp</label> <br>
-                    <input type="text" name="whatsapp" id="whatsapp" class="form-control" value="<?php echo $general->whatsapp; ?>">
+                    <label for="telefono">Telefono</label> <br>
+                    <input type="text" name="telefono" id="telefono" class="form-control" value="<?php echo $general->telefono; ?>">
                 </div>
                 <div class="form-group w-100 pl-2">
-                    <label for="instagram">Instagram</label> <br>
-                    <input type="text" name="instagram" id="instagram" class="form-control" value="<?php echo $general->instagram; ?>">
+                    <label for="whatsapp">WhatsApp</label> <br>
+                    <input type="text" name="whatsapp" id="whatsapp" class="form-control" value="<?php echo $general->whatsapp; ?>">
                 </div>
             </div>
             <div class="d-flex">
@@ -92,6 +88,20 @@
                 <div class="form-group w-100 pl-2">
                     <label for="twitter">Twitter</label> <br>
                     <input type="text" name="twitter" id="twitter" class="form-control" value="<?php echo $general->twitter; ?>">
+                </div>
+                <div class="form-group w-100 pl-2">
+                    <label for="instagram">Instagram</label> <br>
+                    <input type="text" name="instagram" id="instagram" class="form-control" value="<?php echo $general->instagram; ?>">
+                </div>
+            </div>
+            <div class="d-flex">
+                <div class="form-group w-100 pl-2">
+                    <label for="google_api">Google API</label> <br>
+                    <input type="text" name="google_api" id="google_api" class="form-control" value="<?php echo $general->google_api; ?>">
+                </div>
+                <div class="form-group w-100 pl-2">
+                    <label for="site_id">Site ID</label> <br>
+                    <input type="text" name="site_id" id="site_id" class="form-control" value="<?php echo $general->site_id; ?>">
                 </div>
                 <div class="form-group w-100 pl-2">
                     <label for="">&nbsp;</label> <br>

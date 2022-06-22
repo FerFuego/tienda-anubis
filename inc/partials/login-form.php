@@ -11,9 +11,17 @@
             <input type="password" name="pass" class="form-control pass" id="pass" required>
         </div>
 
-        <div class="form-group">
-            <div class="g-recaptcha" data-sitekey="<?php echo Store::SITE_KEY; ?>"></div>
-        </div>
+        <?php 
+            $config = new Configuracion();
+            if ($config->getSiteKey() !== null) : ?>
+
+            <div class="form-group">
+                <div class="g-recaptcha" data-sitekey="<?php echo $config->getSiteKey(); ?>"></div>
+            </div>
+
+        <?php
+            endif;
+            $config->closeConnection(); ?>
 
         <div class="form-group">
             <input type="submit" class="btn btn-primary" value="Entrar">
