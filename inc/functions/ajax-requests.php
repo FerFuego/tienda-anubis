@@ -3,7 +3,7 @@
 /*-----------------------
 Ajax Requests
 -----------------------*/
-require('class-polirubro.php');
+require('class-store.php');
 
 /**
  * Request of Login
@@ -16,7 +16,7 @@ if( !empty($_POST) && isset($_POST['action']) && $_POST['action'] == 'actionLogi
     $login = 'false';
     $updated = false;
 
-    $request = file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret=".Polirubro::GOOGLE_API."&response=".$recaptcha."&remoteip=".$_SERVER['REMOTE_ADDR']);
+    $request = file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret=".Store::GOOGLE_API."&response=".$recaptcha."&remoteip=".$_SERVER['REMOTE_ADDR']);
     $response = json_decode($request);
     
     if ( $response->success === false ) {
@@ -222,7 +222,7 @@ if( !empty($_POST) && isset($_POST['action']) && $_POST['action'] == 'finallyOrd
     
     $user = new Usuarios($_SESSION["Id_Cliente"]);
 
-    $data = new Polirubro();
+    $data = new Store();
     $body = $data->getBodyEmail($id_pedido, $user);
     $data->sendMail($id_pedido, $user, $body);
 
@@ -251,7 +251,7 @@ if( !empty($_POST) && isset($_POST['action']) && $_POST['action'] == 'finallyOrd
     // Send main to client
     $user = new Usuarios($_SESSION["Id_Cliente"]);
 
-    $data = new Polirubro();
+    $data = new Store();
     $body = $data->getBodyEmail($id_pedido, $user);
     $data->sendMail($id_pedido, $user, $body);
     $user->closeConnection(); 

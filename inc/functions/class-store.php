@@ -2,7 +2,7 @@
 /**
  * Global class
  */
-Class Polirubro {
+Class Store {
 
     const GOOGLE_API = '6LehItsUAAAAAJgi5I6XbtuH6sRzbFhiYNQwZSed';
     const SITE_KEY = '6LehItsUAAAAAKkyZXB_Aon0DNX7zqMl8OE7jgAO';
@@ -84,11 +84,9 @@ Class Polirubro {
         $total = 0;
         
         // Construyo el Cuerpo del Mail.
-        $body = "<h2>Pedido Web Nuestro Polirrubros</h2>
-                <p align='center'><strong>Nuestro Polirrubros de Alejandra Barzabal</strong><br>
-                Sargento Cabral 234 - 2550 Bell Ville, C&oacute;rdoba<br>
-                Tel.: (03537) 410102 | WhatsApp: 3537-536991 | E-Mail: 
-                <a href='mailto:nuestropoli@gmail.com'>nuestropoli@gmail.com</a>
+        $body = "<h2>Pedido Web</h2>
+                <p align='center'><strong>Tienda Anubis</strong><br>
+                Bell Ville, C&oacute;rdoba<br>
                 </p>
                 <p align='left'>
                 <strong>Pedido</strong>: ".$id_pedido."
@@ -147,7 +145,7 @@ Class Polirubro {
         $smtpHost = "";  // Dominio alternativo brindado en el email de alta 
         $smtpUsuario = "";  // Mi cuenta de correo
         $smtpClave = "";
-        $nombre = "Web Nuestro Polirrubros";
+        $nombre = "Pedido Web";
         
         $emailDestino = "";
         $emailDestino2 = "";
@@ -170,9 +168,9 @@ Class Polirubro {
         $mail->AddAddress($emailDestino2); // Copia 2 para el vendedor.
         if ($user->getMail()) $mail->AddAddress($user->getMail()); // Copia para el cliente.
         $mail->AddReplyTo($emailDestino); // Esto es para que al recibir el correo y poner Responder, lo haga a la cuenta del vendedor.
-        $mail->Subject = "Nuestro Polirrubros - Pedido: ".$id_pedido; // Este es el titulo del email.
+        $mail->Subject = "Pedido: ".$id_pedido; // Este es el titulo del email.
         $mail->Body = "{$cuerpo}"; // Texto del email en formato HTML
-        //$mail->AltBody = "{$mensaje} \n\n Formulario de ejemplo Web Polirrubros"; // Texto sin formato HTML
+        //$mail->AltBody = "{$mensaje} \n\n Formulario de ejemplo Web"; // Texto sin formato HTML
         
         $mail->SMTPOptions = array(
             'ssl' => array(
@@ -220,5 +218,5 @@ Class Polirubro {
     }
 }
 
-new Polirubro;
+new Store;
 ?>

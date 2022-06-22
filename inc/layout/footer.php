@@ -15,10 +15,10 @@
                 <div class="footer__widget">
                     <h6>Menu del sitio</h6>
                     <ul>
-                        <li class="<?php echo (Polirubro::normalize_title() === '')? 'active':''?>"><a href="./">Inicio</a></li>
-                        <li class="<?php echo (Polirubro::normalize_title() === 'Nosotros')? 'active':''?>"><a href="./nosotros.php">Nosotros</a></li>
-                        <li class="<?php echo (Polirubro::normalize_title() === 'Productos')? 'active':''?>"><a href="./productos.php">Productos</a></li>
-                        <li class="<?php echo (Polirubro::normalize_title() === 'Contacto')? 'active':''?>"><a href="./contacto.php">Contacto</a></li>
+                        <li class="<?php echo (Store::normalize_title() === '')? 'active':''?>"><a href="./">Inicio</a></li>
+                        <li class="<?php echo (Store::normalize_title() === 'Nosotros')? 'active':''?>"><a href="./nosotros.php">Nosotros</a></li>
+                        <li class="<?php echo (Store::normalize_title() === 'Productos')? 'active':''?>"><a href="./productos.php">Productos</a></li>
+                        <li class="<?php echo (Store::normalize_title() === 'Contacto')? 'active':''?>"><a href="./contacto.php">Contacto</a></li>
                     </ul>
                 </div>
             </div>

@@ -1,7 +1,7 @@
 <?php require_once('inc/layout/head.php'); ?>
 
 <!-- Verify Admin -->
-<?php if ( ! Polirubro::is_Admin() ) {
+<?php if ( ! Store::is_Admin() ) {
     $host = $_SERVER['HTTP_HOST'];
     $page = 'index.php';
     $url = "http://$host/$page";

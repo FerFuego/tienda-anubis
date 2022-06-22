@@ -64,7 +64,7 @@
                                 <form class="js-form-cart">
                                     <div class="product__details__price">$<?php echo number_format($product->PreVtaFinal1(), 2,',','.'); ?></div>
 
-                                    <?php if ( Polirubro::checkUsercapabilities() ) : ?>
+                                    <?php if ( Store::checkUsercapabilities() ) : ?>
                                     
                                         <input type="hidden" name="id_product" value="<?php echo $product->getID(); ?>">
                                         <input type="hidden" name="cod_product" value="<?php echo $product->getCode(); ?>">

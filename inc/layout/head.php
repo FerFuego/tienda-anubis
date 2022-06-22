@@ -1,6 +1,6 @@
 <?php session_start(); ?>
 <!-- php Functions -->
-<?php require('inc/functions/class-polirubro.php'); ?>
+<?php require('inc/functions/class-store.php'); ?>
 
 <?php
     // Variables para los Productos 
@@ -25,15 +25,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="title" content="NUESTRO Polirrubros - Mayorista de juguetes, libreria, regalaria, bazar, marroquineria y ropa interior">
-    <meta name="keywords" content="polirrubros, polirubros, nuestro polirrubros, mayorista, venta, juguetes, libreria, regalaria, bazar, marroquineria, ropa interior, bell ville, cordoba, argentina">
-    <meta name="description" content="NUESTRO Polirrubros de Alejandra Barzabal - Mayorista de juguetes, libreria, regalaria, bazar, marroquineria y ropa interior">
+    <meta name="title" content="">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
     <meta name="author" content="Luciano Colmano y Fernando Catalano">
     <meta name="Robots" content="All">
     <meta name="Revisit-after" content="15 days">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="icon" href="img/favicon.png">
-    <title>Nuestro Polirrubros | Bell Ville</title>
+    <title>Tienda Anubis | Bell Ville</title>
 
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;600;900&display=swap" rel="stylesheet">

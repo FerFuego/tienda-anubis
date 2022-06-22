@@ -1,9 +1,9 @@
-<div class="col-lg-3 col-md-4 col-sm-6 mix <?php echo Polirubro::get_slug($product->Rubro); ?>">
+<div class="col-lg-3 col-md-4 col-sm-6 mix <?php echo Store::get_slug($product->Rubro); ?>">
     <div class="featured__item">
         <div class="featured__item__pic set-bg" data-setbg="<?php echo Productos::getImage( $product->CodProducto ); ?>">
             <!-- <div class="product__discount__percent">-20%</div> -->
             <div class="product__code"><h5><?php echo 'COD: ' . $product->CodProducto; ?></h5></div>
-            <?php if ( Polirubro::checkUsercapabilities() ) : ?>
+            <?php if ( Store::checkUsercapabilities() ) : ?>
                 <form class="js-form-cart">
                     <input type="hidden" name="id_product" value="<?php echo $product->Id_Producto; ?>">
                     <input type="hidden" name="cod_product" value="<?php echo $product->CodProducto; ?>">
@@ -25,7 +25,7 @@
             <?php if ( isset($_SESSION["id_user"]) ) : ?>
                 <p class="text-danger"><?php echo 'Precio Lista: <strong>$ '. number_format($product->PreVtaFinal1, 2,',','.') . '</strong>'; ?></p>
 
-                <?php if ( Polirubro::checkUsercapabilities() ) : ?>
+                <?php if ( Store::checkUsercapabilities() ) : ?>
                     <form class="js-form-cart">
                         <input type="hidden" name="id_product" value="<?php echo $product->Id_Producto; ?>">
                         <input type="hidden" name="cod_product" value="<?php echo $product->CodProducto; ?>">
