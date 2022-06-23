@@ -4,8 +4,9 @@
         Preloader
     --------------------*/
     $(window).on('load', function () {
-        $(".loader").fadeOut();
-        $("#preloder").delay(200).fadeOut("slow");
+        // Load the preloader
+        //$(".loader").fadeOut();
+        //$("#preloder").delay(200).fadeOut("slow");
 
         /*------------------
             Gallery filter
@@ -366,15 +367,6 @@ $(document).ready( function () {
             success: function (response) {
 
                 var data = JSON.parse(response);
-                toastr.success('Pedido Actualizado Correctamente.');
-
-                if (data.updated.updated > 0) {
-                    toastr.info(data.updated.updated + ' Productos Actualizados');
-                }
-                
-                if (data.updated.deleted > 0) {
-                    toastr.info(data.updated.deleted + ' Productos Eliminados');
-                }
 
                 setTimeout(function () {
                     if (data.login == 'true') {
@@ -385,8 +377,20 @@ $(document).ready( function () {
                         location.href = 'cpanel.php';
                     } else if (data.login == 'Captcha Incorrecto!') {
                         $('.js-login-message').html('<small class="text-danger">'+data.login+'</small>');
+                        return;
                     } else {
                         $('.js-login-message').html('<small class="text-danger">Usuario o contrseña Incorrecto!</small>');
+                        return;
+                    }
+
+                    toastr.success('Pedido Actualizado Correctamente.');
+
+                    if (data.updated.updated > 0) {
+                        toastr.info(data.updated.updated + ' Productos Actualizados');
+                    }
+                    
+                    if (data.updated.deleted > 0) {
+                        toastr.info(data.updated.deleted + ' Productos Eliminados');
                     }
                 }, 3000);
             }

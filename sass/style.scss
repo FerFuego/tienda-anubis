@@ -1,7 +1,6 @@
 @import "variable";
 @import "mixins";
 
-@import "vendor/toastr.min";
 @import "vendor/bootstrap.min";
 @import "vendor/elegant-icons";
 @import "vendor/font-awesome.min";
@@ -10,6 +9,7 @@
 @import "vendor/nice-select";
 @import "vendor/owl.carousel.min";
 @import "vendor/slicknav.min";
+@import "vendor/toastr";
 
 @import "base";
 @import "header";

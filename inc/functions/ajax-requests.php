@@ -18,11 +18,12 @@ if( !empty($_POST) && isset($_POST['action']) && $_POST['action'] == 'actionLogi
 
     // Verify Captcha
     $config = new Configuracion();
-    if ( null !== $config->getGoogleAPIKey() ) {
+    if ( null !== $config->getGoogleAPIKey() && $config->getGoogleAPIKey() !== '' ) {
         $request = file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret=".$config->getGoogleAPIKey()."&response=".$recaptcha."&remoteip=".$_SERVER['REMOTE_ADDR']);
         $response = json_decode($request);
         if ( false === $response->success ) {
-            echo 'Captcha Incorrecto!';
+            $data['login'] = 'Captcha Incorrecto!';
+            echo json_encode($data);
             die();
         }
     }
