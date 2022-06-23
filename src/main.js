@@ -1012,28 +1012,30 @@ $(document).ready( function () {
     Show Preview Image
 -----------------------*/
 $("#imagePreview").change(function(e) {
-    var reader = new FileReader();
     for (var i = 0; i < e.originalEvent.srcElement.files.length; i++) {
         var file = e.originalEvent.srcElement.files[i];
         var img = document.getElementById("preview-img");
-        reader.onloadend = function() {
-            img.src = reader.result;
-        };
+        var reader = new FileReader();
+        reader.onloadend = wrapper(img);
         reader.readAsDataURL(file);
     }
 });
 
 $("#imagePreviewCateg").change(function(e) {
-    var reader = new FileReader();
     for (var i = 0; i < e.originalEvent.srcElement.files.length; i++) {
         var file = e.originalEvent.srcElement.files[i];
         var img = document.getElementById("preview-img-categ");
-        reader.onloadend = function() {
-            img.src = reader.result;
-        };
+        var reader = new FileReader();
+        reader.onloadend = wrapper(img);
         reader.readAsDataURL(file);
     }
 });
+
+function wrapper(img) {
+    return function() {
+        img.src = reader.result;
+    };
+}
 
 /*----------------------
     Clean Client Modal
