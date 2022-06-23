@@ -1,5 +1,3 @@
-'use strict';
-
 (function ($) {
 
     /*------------------
@@ -193,17 +191,18 @@
 		Quantity change
 	--------------------- */
     var proQty = $('.pro-qty');
+    var newVal;
     proQty.prepend('<span class="dec qtybtn">-</span>');
     proQty.append('<span class="inc qtybtn">+</span>');
     proQty.on('click', '.qtybtn', function () {
         var $button = $(this);
         var oldValue = $button.parent().find('input').val();
         if ($button.hasClass('inc')) {
-            var newVal = parseFloat(oldValue) + 1;
+            newVal = parseFloat(oldValue) + 1;
         } else {
             // Don't allow decrementing below zero
             if (oldValue > 0) {
-                var newVal = parseFloat(oldValue) - 1;
+                newVal = parseFloat(oldValue) - 1;
             } else {
                 newVal = 0;
             }
@@ -299,7 +298,7 @@ function loadGroupCategory (subrubro) {
             $('.sub-item').removeClass('active');
             $('.lastlist').hide();
             $('.'+subrubro).addClass('active');
-            console.log($(this).parent().parent())
+            console.log($(this).parent().parent());
         },
         success: function (response) {
             $('.lastlist_' + subrubro).show();
@@ -313,7 +312,7 @@ function loadGroupCategory (subrubro) {
 ---------------------*/
 $('#select-order-prod').on('change', function(){
     $('#form-order-prod').submit();
-})
+});
 
 /*----------------------
     Form Login Toggle
@@ -392,7 +391,7 @@ $(document).ready( function () {
                 }, 3000);
             }
         });
-    })
+    });
 
     /*--------------------
         Insert Cart
@@ -440,7 +439,7 @@ $(document).ready( function () {
                 }
             }
         });
-    })
+    });
 
     /*--------------------
         Update Cart
@@ -470,7 +469,6 @@ $(document).ready( function () {
             contentType: false,
             processData: false,
             success: function (response) {
-                console.log(response)
                 if (response == 'true') {
                     location.reload();
                 } else {
@@ -479,7 +477,7 @@ $(document).ready( function () {
                 }
             }
         });
-    })
+    });
 
     /*--------------------
         Delete Cart
@@ -514,7 +512,7 @@ $(document).ready( function () {
                 }
             }
         });
-    })
+    });
 
     /*--------------------
         Finally Order
@@ -551,7 +549,7 @@ $(document).ready( function () {
                 }
             }
         });
-    })
+    });
 
     /*---------------------------
         Finally Order Admin Btn
@@ -583,7 +581,7 @@ $(document).ready( function () {
                 }
             }
         });
-    })
+    });
 
     /*--------------------------
         Update Configuration
@@ -631,7 +629,6 @@ $(document).ready( function () {
                 }
             }
         });
-
     });
 
     /*--------------------
@@ -676,7 +673,7 @@ $(document).ready( function () {
                     }
                 }
             });
-        })
+        });
 
         /*--------------------
             Delete Client
@@ -717,7 +714,7 @@ $(document).ready( function () {
                     }
                 }
             });
-        })
+        });
 
         /*--------------------
             SET Product Data
@@ -756,7 +753,7 @@ $(document).ready( function () {
                     }
                 }
             });
-        })
+        });
 
         /*--------------------
             Delete Product
@@ -797,7 +794,7 @@ $(document).ready( function () {
                     }
                 }
             });
-        })
+        });
 
         /*--------------------
             SET Banner Data
@@ -809,7 +806,7 @@ $(document).ready( function () {
             var values = {};
             var files = false;
             if ($('#imagePreview').val()) {
-                var files = $('#imagePreview')[0].files;
+                files = $('#imagePreview')[0].files;
             }
 
             $.each($(this).serializeArray(), function(i, field) {
@@ -842,7 +839,7 @@ $(document).ready( function () {
                     }
                 }
             });
-        })
+        });
 
         /*--------------------
             Delete Banner
@@ -883,7 +880,7 @@ $(document).ready( function () {
                     }
                 }
             });
-        })
+        });
 
         /*--------------------
             SET Categ Data
@@ -895,7 +892,7 @@ $(document).ready( function () {
             var values = {};
             var files = false;
             if ($('#imagePreviewCateg').val()) {
-                var files = $('#imagePreviewCateg')[0].files;
+                files = $('#imagePreviewCateg')[0].files;
             }
 
             $.each($(this).serializeArray(), function(i, field) {
@@ -927,7 +924,7 @@ $(document).ready( function () {
                     }
                 }
             });
-        })
+        });
 
         /*--------------------
             Delete Categ
@@ -968,7 +965,7 @@ $(document).ready( function () {
                     }
                 }
             });
-        })
+        });
 
         /*--------------------
             Delete Order
@@ -1008,32 +1005,32 @@ $(document).ready( function () {
                     }
                 }
             });
-        })
+        });
 });
 
 /*-----------------------
     Show Preview Image
 -----------------------*/
 $("#imagePreview").change(function(e) {
+    var reader = new FileReader();
     for (var i = 0; i < e.originalEvent.srcElement.files.length; i++) {
         var file = e.originalEvent.srcElement.files[i];
         var img = document.getElementById("preview-img");
-        var reader = new FileReader();
         reader.onloadend = function() {
             img.src = reader.result;
-        }
+        };
         reader.readAsDataURL(file);
     }
 });
 
 $("#imagePreviewCateg").change(function(e) {
+    var reader = new FileReader();
     for (var i = 0; i < e.originalEvent.srcElement.files.length; i++) {
         var file = e.originalEvent.srcElement.files[i];
         var img = document.getElementById("preview-img-categ");
-        var reader = new FileReader();
         reader.onloadend = function() {
             img.src = reader.result;
-        }
+        };
         reader.readAsDataURL(file);
     }
 });

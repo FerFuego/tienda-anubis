@@ -297,24 +297,26 @@
 
         $this.mobileNav.on('keydown', '[role="menuitem"]', function(e) {
             var ev = e || event;
-
+            var allItems;
+            var idx;
+            var next;
             switch(ev.keyCode){
                 case Keyboard.DOWN:
                     e.preventDefault();
-                    var allItems = $(e.target).parent().parent().children().children('[role="menuitem"]:visible');
-                    var idx = allItems.index( e.target );
+                    allItems = $(e.target).parent().parent().children().children('[role="menuitem"]:visible');
+                    idx = allItems.index( e.target );
                     var nextIdx = idx + 1;
                     if (allItems.length <= nextIdx) {
                         nextIdx = 0;
                     }
-                    var next = allItems.eq( nextIdx );
+                    next = allItems.eq( nextIdx );
                     next.focus();
                 break;
                 case Keyboard.UP:
                     e.preventDefault();
-                    var allItems = $(e.target).parent().parent().children().children('[role="menuitem"]:visible');
-                    var idx = allItems.index( e.target );
-                    var next = allItems.eq( idx - 1 );
+                    allItems = $(e.target).parent().parent().children().children('[role="menuitem"]:visible');
+                    idx = allItems.index( e.target );
+                    next = allItems.eq( idx - 1 );
                     next.focus();
                 break;
                 case Keyboard.LEFT:
@@ -332,7 +334,7 @@
                     e.preventDefault();
                     $this._menuToggle();
                     $($this.btn).focus();
-                    break;    
+                    break;
             }
         });
 
@@ -462,7 +464,7 @@
 
             if (settings.animations === 'jquery') {
                 el.stop(true,true).slideUp(duration, this.settings.easingClose, function() {
-                    afterClose(trigger, parent)
+                    afterClose(trigger, parent);
                 });
             } else if (settings.animations === 'velocity') {
                 

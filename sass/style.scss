@@ -1,6 +1,15 @@
 @import "variable";
 @import "mixins";
-@import "toastr.min";
+
+@import "vendor/toastr.min";
+@import "vendor/bootstrap.min";
+@import "vendor/elegant-icons";
+@import "vendor/font-awesome.min";
+@import "vendor/jquery-ui.min";
+@import "vendor/lightbox";
+@import "vendor/nice-select";
+@import "vendor/owl.carousel.min";
+@import "vendor/slicknav.min";
 
 @import "base";
 @import "header";
