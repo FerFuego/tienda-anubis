@@ -1020,7 +1020,7 @@ $("#imagePreview").change(function(e) {
         var file = e.originalEvent.srcElement.files[i];
         var img = document.getElementById("preview-img");
         var reader = new FileReader();
-        reader.onloadend = wrapper(img);
+        reader.onloadend = wrapper(img, reader);
         reader.readAsDataURL(file);
     }
 });
@@ -1030,12 +1030,12 @@ $("#imagePreviewCateg").change(function(e) {
         var file = e.originalEvent.srcElement.files[i];
         var img = document.getElementById("preview-img-categ");
         var reader = new FileReader();
-        reader.onloadend = wrapper(img);
+        reader.onloadend = wrapper(img, reader);
         reader.readAsDataURL(file);
     }
 });
 
-function wrapper(img) {
+function wrapper(img, reader) {
     return function() {
         img.src = reader.result;
     };

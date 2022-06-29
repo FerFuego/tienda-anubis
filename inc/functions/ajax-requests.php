@@ -321,7 +321,7 @@ if( !empty($_POST) && isset($_POST['action']) && $_POST['action'] == 'operationC
         $user->Localidad = $locality;
         $user->Mail = $mail;
         $user->Usuario = $username;
-        $user->Password = $password;
+        $user->Password = md5($password);
         $user->ListaPrecioDef = $price;
         $user->insert();
         $user->closeConnection();
@@ -335,9 +335,9 @@ if( !empty($_POST) && isset($_POST['action']) && $_POST['action'] == 'operationC
         $user->Localidad = $locality;
         $user->Mail = $mail;
         $user->Usuario = $username;
-        $user->Password = $password;
         $user->ListaPrecioDef = $price;
-        $user->update();
+        $password = $password ? md5($password) : null;
+        $user->update($password);
         $user->closeConnection();
         die('true');
     }
