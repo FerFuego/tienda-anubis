@@ -29,8 +29,7 @@ if( !empty($_POST) && isset($_POST['action']) && $_POST['action'] == 'actionLogi
     }
     $config->closeConnection();
     // End Verify Captcha
-
-    $access = new Login($user, $pass);
+    $access = new Login($user, md5($pass));
     $result = $access->loginProcess();
 
     if ( $result->num_rows > 0 ) :
