@@ -59,40 +59,10 @@
                                 <!-- <span>(18 reviews)</span> -->
                             </div>
 
-                            <h4>Cod.: <?php echo $product->getCode(); ?></h4>
+                            <h4 class="mb-3"><strong>Cod:</strong> <?php echo $product->getCode(); ?></h4>
 
                             <?php if ( isset($_SESSION["id_user"]) ) : ?>
-
-                                <form class="js-form-cart">
-                                    <div class="product__details__price">$<?php echo number_format($product->PreVtaFinal1(), 2,',','.'); ?></div>
-
-                                    <?php if ( Store::checkUsercapabilities() ) : ?>
-                                    
-                                        <input type="hidden" name="id_product" value="<?php echo $product->getID(); ?>">
-                                        <input type="hidden" name="cod_product" value="<?php echo $product->getCode(); ?>">
-                                        <input type="hidden" name="name_product" value="<?php echo $product->getNombre(); ?>">
-                                        <input type="hidden" name="price_product" value="<?php echo $product->PreVtaFinal1(); ?>">
-
-                                        <div>
-                                            <textarea type="text" name="nota" class="product__details__note" placeholder="Agregar Nota"></textarea>
-                                        </div>
-
-                                        <div class="product__details__quantity">
-                                            <div class="quantity">
-                                                <div class="pro-qty">
-                                                    <input type="number" name="cant" min="1" max="99999" value="1"> 
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <input type="submit" class="primary-btn" value="AGREGAR AL CARRITO">
-                                        <!-- <a href="#" class="heart-icon"><span class="icon_heart_alt"></span></a> -->
-                                    <?php endif; ?>
-                                </form>
-
-
-                            <div class="js-login-message"></div>
-
+                                <div class="product__details__price">$<?php echo number_format($product->PreVtaFinal1(), 2,',','.'); ?></div>
                             <?php endif; ?>
 
                             <ul>
@@ -124,6 +94,31 @@
                                     </div>
                                 </li> -->
                             </ul>
+
+                            <?php if ( isset($_SESSION["id_user"]) ) : ?>
+
+                                <form class="js-form-cart">
+                                    <?php if ( Store::checkUsercapabilities() ) : ?>
+                                        <input type="hidden" name="id_product" value="<?php echo $product->getID(); ?>">
+                                        <input type="hidden" name="cod_product" value="<?php echo $product->getCode(); ?>">
+                                        <input type="hidden" name="name_product" value="<?php echo $product->getNombre(); ?>">
+                                        <input type="hidden" name="price_product" value="<?php echo $product->PreVtaFinal1(); ?>">
+                                        <textarea type="text" name="nota" class="product__details__note" placeholder="Agregar Nota"></textarea>
+                                        <div class="product__details__quantity">
+                                            <div class="quantity">
+                                                <div class="pro-qty">
+                                                    <input type="number" name="cant" min="1" max="99999" value="1"> 
+                                                </div>
+                                            </div>
+                                            <input type="submit" class="primary-btn" value="AGREGAR AL CARRITO">
+                                        </div>
+                                        <!-- <a href="#" class="heart-icon"><span class="icon_heart_alt"></span></a> -->
+                                    <?php endif; ?>
+                                </form>
+
+                                <div class="js-login-message"></div>
+
+                            <?php endif; ?>
                         </div>
                     </div>
                     <!-- <div class="col-lg-12">

@@ -313,9 +313,11 @@
 }
 
 .product__item__pic {
+    display: block;
     height: 270px;
     position: relative;
     overflow: hidden;
+    width: 100%;
 }
 
 .product__item__pic__hover {
@@ -385,6 +387,17 @@
     h5 {
         color: $heading-color-2;
         font-weight: 600;
+    }
+    form {
+        padding: 0 14px;
+        textarea {
+            border:1px solid $border;
+            padding: 0 8px;
+            width: 100%;
+        }
+        input[type="submit"] {
+            width: 100%;
+        }
     }
 }
 

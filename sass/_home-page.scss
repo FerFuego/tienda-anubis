@@ -171,10 +171,12 @@
 }
 
 .featured__item__pic {
-    height: 270px;
-    position: relative;
-    overflow: hidden;
     background-position: center center;
+    display: block;
+    height: 270px;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
 
     .product__code {
         background-color: #7fad39;
@@ -267,6 +269,18 @@
         color: #b2b2b2;
         display: block;
         margin-bottom: 4px;
+    }
+
+    form {
+        padding: 0 14px;
+        textarea {
+            border:1px solid $border;
+            padding: 0 8px;
+            width: 100%;
+        }
+        input[type="submit"] {
+            width: 100%;
+        }
     }
 }
 /*---------------------
